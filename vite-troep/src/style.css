@@ -1,0 +1,23 @@
+fieldset > label {
+	display: block;
+}
+
+br {
+	display: none;
+}
+
+fieldset {
+	display: none;
+}
+
+fieldset#personal-info:target {
+	display: block;
+}
+
+fieldset#wafs:target {
+	display: block;
+}
+
+fieldset#cssttr:target {
+	display: block;
+}
