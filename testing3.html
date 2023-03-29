@@ -7,7 +7,6 @@
     <meta name="description" content="Je moeder hahahahhaha" />
     <title>Enquete</title>
     <link rel="stylesheet" href="/static/style.css" />
-    <!-- <link rel="stylesheet" href="/static/output.css"> -->
     <!-- option{$}*53[value="$"] -->
   </head>
   <body>
@@ -21,23 +20,20 @@
             Klik op een onderwerp om de enquete te starten. Vul alle velden in
             alle onderwerpen in voordat je je antwoorden verstuurd!
           </p>
-          <a href="#personal-info-form">1. Persoonlijk info</a>
+          <a href="#personal-info">1. Persoonlijk info</a>
           <br />
-          <a href="#wafs-form">2. Web App From Scratch</a>
+          <a href="#wafs">2. Web App From Scratch</a>
           <br />
-          <a href="#cssttr-form">3. CSS To The Rescue</a>
-          <br />
-          <a href="#submit-form">Final. Verzend Formulier</a>
+          <a href="#cssttr">3. CSS To The Rescue</a>
         </nav>
       </aside>
-      <p>
-        <strong
-          >Velden gemarkeerd met <span aria-label="required">*</span> zijn
-          verplicht! </strong
-        >
-      </p>
-      <form id="personal-info-form" action="/personal-info" method="POST">
-        <input type="text" name="token" hidden value="USERTOKEN" />
+      <form id="form" action="/testing2.html">
+        <p>
+          <strong
+            >Velden gemarkeerd met <span aria-label="required">*</span> zijn
+            verplicht!</strong
+          >
+        </p>
         <fieldset id="personal-info">
           <legend>Persoonlijke informatie</legend>
           <label>
@@ -45,12 +41,12 @@
               >Voornaam:
               <strong><span aria-label="required">*</span></strong></span
             >
-            <input type="text" placeholder="Voornaam *" name="voornaam" aria-required="true" required
+            <input type="text" name="voornaam" aria-required="true"
           /></label>
           <br />
           <label
             >Tussenvoegsel:
-            <input type="text" name="tussenvoegsel" placeholder="Tussenvoegsel"/>
+            <input type="text" name="tussenvoegsel" />
           </label>
           <br />
           <label
@@ -58,48 +54,62 @@
               >Achternaam:
               <strong><span aria-label="required">*</span></strong>
             </span>
-            <input type="text" placeholder="Achternaam *" name="achternaam" aria-required="true" required />
+            <input type="text" name="achternaam" aria-required />
           </label>
           <br />
-          <div class="invalid-error">
-            <strong>Error</strong>: You must enter a valid email!
-          </div>
           <label
             ><span
               >Email:
               <strong><span aria-label="required">*</span></strong>
             </span>
-            <input type="email" name="email" placeholder="Email *" aria-required="true" required />
+            <input type="email" name="email" aria-required />
+          </label>
+          <br />
+          <a href="#wafs">Volgende</a>
+        </fieldset>
+        <br />
+        <fieldset id="wafs">
+          <legend>Web App From Scratch</legend>
+          <label
+            ><span>
+              Docenten:
+              <strong><span aria-label="required">*</span></strong>
+            </span>
+            <input
+              type="text"
+              ariaerequired
+              name="docenten-wafs"
+              value="Robert & Joost"
+          /></label>
+          <br />
+          <label
+            ><span
+              >Beginweek (Voorbeeld: 2023-W04):
+              <strong><span aria-label="required">*</span></strong>
+            </span>
+            <select name="beginweek-wafs" aria-required>
+              <option value="1">1</option>
+              <option value="2">2</option>
+            </select>
           </label>
           <br />
           <label
             ><span
-              >Studentnummer:
+              >Eindweek (Voorbeeld: 2023-W04):
               <strong><span aria-label="required">*</span></strong>
             </span>
-            <input type="number" name="studentnumber" placeholder="Studentnummer *" aria-required="true" required />
+            <select name="eindweek-wafs" aria-required>
+              <option value="1">1</option>
+              <option value="2">2</option>
+            </select>
           </label>
-          <br>
-          <input type="submit" value="Submit" />
-        </fieldset>
-      </form>
-      <br />
-      <form id="wafs-form" action="/wafs" method="POST">
-        <input type="text" name="token" hidden value="USERTOKEN" />
-        <fieldset id="wafs">
-          <legend>Web App From Scratch</legend>
-          <pre>
-Docenten: Joost & Robert
-Beginweek: 13/feb
-Eindweek: 6/mrt</pre
-          >
           <br />
           <label>
             <span>
               Score lesstof (hoe moeilijk was het vak?):
               <strong><span aria-label="required">*</span></strong>
             </span>
-            <select name="score-lesstof-wafs" aria-required required>
+            <select name="score-lesstof-wafs" aria-required>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
@@ -111,7 +121,7 @@ Eindweek: 6/mrt</pre
               Score uitleg (hoe duidelijk was het uitgelegd?):
               <strong><span aria-label="required">*</span></strong>
             </span>
-            <select name="score-uitleg-wafs" aria-required required>
+            <select name="score-uitleg-wafs" aria-required>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
@@ -123,32 +133,63 @@ Eindweek: 6/mrt</pre
               Score eigen inzicht (hoe goed snap je het nu?):
               <strong><span aria-label="required">*</span></strong>
             </span>
-            <select name="score-uitleg-wafs" aria-required required>
+            <select name="score-uitleg-wafs" aria-required>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
             </select>
           </label>
           <br />
-          <input type="submit" value="Submit" />
+          <a href="#personal-info">Terug</a>
+          <a href="#cssttr">Volgende</a>
         </fieldset>
-      </form>
-      <br />
-      <form id="cssttr-form" action="/cssttr" method="POST">
-        <input type="text" name="token" hidden value="USERTOKEN" />
+        <br />
         <fieldset id="cssttr">
           <legend>CSS To The Rescue</legend>
-          <pre>
-Docenten: Sanne & Vasilis
+          <pre>Docenten: Sanne & Vasilis
 Beginweek: 13/feb
-Eindweek: 6/mrt</pre
-          >
+Eindweek: 6/mrt</pre>
+          <!-- <label
+            ><span>
+              Docenten:
+              <strong><span aria-label="required">*</span></strong>
+            </span>
+            <input list="cssttr-docenten-datalist" name="cssttr-docenten">
+            <datalist id="cssttr-docenten-datalist">
+              <option value="Vasilis">Vasilis</option>
+              <option value="Sanne">Sanne</option>
+            </datalist>
+          </label> -->
+          <!-- <br /> -->
+
+          <!-- <label
+            ><span
+              >Beginweek (Voorbeeld: 2023-W04):
+              <strong><span aria-label="required">*</span></strong>
+            </span>
+            <select name="beginweek-cssttr" aria-required>
+              <option value="1">1</option>
+              <option value="2">2</option>
+            </select>
+          </label>
+          <br />
+          <label
+            ><span
+              >Eindweek (Voorbeeld: 2023-W04):
+              <strong><span aria-label="required">*</span></strong>
+            </span>
+            <select name="eindweek-cssttr" aria-required>
+              <option value="1">1</option>
+              <option value="2">2</option>
+            </select>
+          </label> -->
+          <!-- <br /> -->
           <label>
             <span>
               Score lesstof (hoe moeilijk was het vak?):
               <strong><span aria-label="required">*</span></strong>
             </span>
-            <select name="score-lesstof-cssttr" aria-required="true" required>
+            <select name="score-lesstof-cssttr" aria-required>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
@@ -160,7 +201,7 @@ Eindweek: 6/mrt</pre
               Score uitleg (hoe duidelijk was het uitgelegd?):
               <strong><span aria-label="required">*</span></strong>
             </span>
-            <select name="score-uitleg-cssttr" aria-required="true" required>
+            <select name="score-uitleg-cssttr" aria-required>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
@@ -172,30 +213,25 @@ Eindweek: 6/mrt</pre
               Score eigen inzicht (hoe goed snap je het nu?):
               <strong><span aria-label="required">*</span></strong>
             </span>
-            <select name="score-uitleg-cssttr" aria-required="true" required>
+            <select name="score-uitleg-cssttr" aria-required>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
             </select>
           </label>
           <br />
-          <input type="submit" value="Submit">
+          <a href="#wafs">Terug</a>
+          <!-- <a href="#">Volgende</a> -->
         </fieldset>
-      </form>
-      <form id="submit-form" action="/submit" method="POST">
-        <input type="text" name="token" hidden value="USERTOKEN" />
-        <fieldset id="cssttr">
-          <legend>Formulier verzenden</legend>
+        <br />
+        <div>
           <label>
-            <span>
-              Ik ga heb het formulier ingevuld en wil deze verzenden:
-              <strong><span aria-label="required">*</span></strong>
-            </span>
-            <input type="checkbox" name="klaar" id="klaar" required>
+            Klaar? Check hier voor submit!
+            <input type="checkbox" name="klaar" id="klaar" />
           </label>
-          <br />
-          <button type="submit">Submit</button>
-        </fieldset>
+        </div>
+        <br />
+        <button type="submit">Sla op</button>
       </form>
     </main>
   </body>

@@ -1,4 +1,33 @@
-fieldset > label, nav > a{
+* {
+	font-family: sans-serif;
+}
+
+
+/* fieldset > label, nav > a{
+	display: block;
+} */
+
+label {
+	display: block;
+	margin-bottom: 1rem;
+	width: fit-content;
+}
+
+/* label > span {
+	margin-bottom: 1rem;
+} */
+
+label > input, label > select {
+	display: block;
+	margin-bottom: 1rem;
+	margin-top: 0.2rem;
+}
+
+fieldset {
+	padding: 1.5rem 1rem 1.5rem 1rem;
+}
+
+nav > a{
 	display: block;
 }
 
@@ -11,40 +40,65 @@ aside {
 	width: fit-content;
 }
 
-form {
+/* form { */
 	/* float: right;
 	width: 100%; */
-}
+/* } */
 
-fieldset {
+form {
 	display: none;
 }
 
-fieldset#personal-info:target {
+form#personal-info-form:target {
 	display: block;
 }
 
-fieldset#wafs:target {
+form#wafs-form:target {
 	display: block;
 }
 
-fieldset#cssttr:target {
+form#cssttr-form:target {
 	display: block;
 }
 
-/* fieldset input:valid {
-	background-color: green;
-} */
-
-/* form:invalid button[type="submit"]::before {
-	content: "Form invalid";
+form#submit-form:target {
+	display: block;
 }
 
-form:valid button[type="submit"]::before {
-	content: "Submit!";
+fieldset:valid {
+	outline-color: green;
+	border-color: green;
 }
 
-form:invalid button[type="submit"] {
-	pointer-events: none;
-	cursor: not-allowed;
-} */
+fieldset, input {
+	border-radius: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"] {
+	/* height: 2rem; */
+	padding: 0.5rem;
+	font-size: 1.2rem;
+}
+
+input[type="submit"] {
+	padding: 0.5rem;
+	font-size: 1.2rem;
+}
+
+.invalid-error {
+	border-radius: 5px;
+	background-color: #ffc9c9b2;
+	padding: 1.2rem;
+	border: 2px solid #c81400;
+	margin-bottom: 0.5rem;
+	color: #720b00;
+	width: fit-content;
+}
+
+@media (min-width: 768px) {
+	fieldset {
+		padding: 2rem;
+	}
+}
