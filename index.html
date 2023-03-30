@@ -4,8 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="color-scheme" content="dark light" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Je moeder hahahahhaha" />
     <title>Enquete</title>
     <link rel="stylesheet" href="/static/style.css" />
+    <script src="/static/app.js" defer></script>
+    <!-- <link rel="stylesheet" href="/static/output.css"> -->
     <!-- option{$}*53[value="$"] -->
   </head>
   <body>
@@ -13,1061 +16,187 @@
       <h1>Pain</h1>
     </header>
     <main>
-      <form action="">
-        <p>* is verplicht</p>
-        <fieldset>
+      <aside>
+        <nav>
+          <p>
+            Klik op een onderwerp om de enquete te starten. Vul alle velden in
+            alle onderwerpen in voordat je je antwoorden verstuurd!
+          </p>
+          <a href="#personal-info-form">1. Persoonlijk info</a>
+          <br />
+          <a href="#wafs-form">2. Web App From Scratch</a>
+          <br />
+          <a href="#cssttr-form">3. CSS To The Rescue</a>
+          <br />
+          <a href="#submit-form">Final. Verzend Formulier</a>
+        </nav>
+      </aside>
+      <p>
+        <strong
+          >Velden gemarkeerd met <span aria-label="required">*</span> zijn
+          verplicht! </strong
+        >
+      </p>
+      <form id="personal-info-form" action="/personal-info" method="POST">
+        <input type="text" name="personal-info-token" hidden value="USERTOKEN" />
+        <fieldset id="personal-info">
           <legend>Persoonlijke informatie</legend>
-          <label>Voornaam * <input type="text" name="voornaam" required /></label>
+          <label>
+            <span
+              >Voornaam:
+              <strong><span aria-label="required">*</span></strong></span
+            >
+            <input type="text" placeholder="Voornaam *" name="voornaam" aria-required="true" required
+          /></label>
           <br />
           <label
-            >Tussenvoegsel
-            <input type="text" name="tussenvoegsel" />
+            >Tussenvoegsel:
+            <input type="text" name="tussenvoegsel" placeholder="Tussenvoegsel"/>
           </label>
           <br />
           <label
-            >Achternaam *
-            <input type="text" name="achternaam" required />
+            ><span
+              >Achternaam:
+              <strong><span aria-label="required">*</span></strong>
+            </span>
+            <input type="text" placeholder="Achternaam *" name="achternaam" aria-required="true" required />
+          </label>
+          <br />
+          <!-- <div class="invalid-error">
+            <strong>Error</strong>: You must enter a valid email!
+          </div> -->
+          <label
+            ><span
+              >Email:
+              <strong><span aria-label="required">*</span></strong>
+            </span>
+            <input type="email" name="email" placeholder="Email *" aria-required="true" required />
           </label>
           <br />
           <label
-            >Email *
-            <input type="email" name="email" required />
+            ><span
+              >Studentnummer:
+              <strong><span aria-label="required">*</span></strong>
+            </span>
+            <input type="number" name="studentnumber" placeholder="Studentnummer *" aria-required="true" required />
           </label>
+          <br>
+          <input type="submit" value="Submit" />
         </fieldset>
-        <fieldset>
+      </form>
+      <br />
+      <form id="wafs-form" action="/wafs" method="POST">
+        <input type="text" name="wafs-token" hidden value="USERTOKEN" />
+        <fieldset id="wafs">
           <legend>Web App From Scratch</legend>
-          <label
-            >Docenten *
-            <input type="text" required name="docenten-wafs" value="Robert Spier & Joost Faber"
-          /></label>
-          <label
-            >Beginweek (Voorbeeld: 2023-W04) *
-            <!-- <input type="text" required pattern="^([0-9]{4})-?W(5[0-3]|[1-4][0-9]|0[1-9])$" -->
-            <select name="beginweek-wafs" required>
+          <pre>
+Docenten: Joost & Robert
+Beginweek: 13/feb
+Eindweek: 6/mrt</pre
+          >
+          <br />
+          <label>
+            <span>
+              Score lesstof (hoe moeilijk was het vak?):
+              <strong><span aria-label="required">*</span></strong>
+            </span>
+            <select name="score-lesstof-wafs" aria-required required>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
-              <option value="10">10</option>
-              <option value="11">11</option>
-              <option value="12">12</option>
-              <option value="13">13</option>
-              <option value="14">14</option>
-              <option value="15">15</option>
-              <option value="16">16</option>
-              <option value="17">17</option>
-              <option value="18">18</option>
-              <option value="19">19</option>
-              <option value="20">20</option>
-              <option value="21">21</option>
-              <option value="22">22</option>
-              <option value="23">23</option>
-              <option value="24">24</option>
-              <option value="25">25</option>
-              <option value="26">26</option>
-              <option value="27">27</option>
-              <option value="28">28</option>
-              <option value="29">29</option>
-              <option value="30">30</option>
-              <option value="31">31</option>
-              <option value="32">32</option>
-              <option value="33">33</option>
-              <option value="34">34</option>
-              <option value="35">35</option>
-              <option value="36">36</option>
-              <option value="37">37</option>
-              <option value="38">38</option>
-              <option value="39">39</option>
-              <option value="40">40</option>
-              <option value="41">41</option>
-              <option value="42">42</option>
-              <option value="43">43</option>
-              <option value="44">44</option>
-              <option value="45">45</option>
-              <option value="46">46</option>
-              <option value="47">47</option>
-              <option value="48">48</option>
-              <option value="49">49</option>
-              <option value="50">50</option>
-              <option value="51">51</option>
-              <option value="52">52</option>
-              <option value="53">53</option>
             </select>
           </label>
           <br />
-          <label
-            >Eindweek (Voorbeeld: 2023-W04) *
-            <!-- <input type="text" required pattern="^([0-9]{4})-?W(5[0-3]|[1-4][0-9]|0[1-9])$" -->
-            <select name="eindweek-wafs" required>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
-              <option value="10">10</option>
-              <option value="11">11</option>
-              <option value="12">12</option>
-              <option value="13">13</option>
-              <option value="14">14</option>
-              <option value="15">15</option>
-              <option value="16">16</option>
-              <option value="17">17</option>
-              <option value="18">18</option>
-              <option value="19">19</option>
-              <option value="20">20</option>
-              <option value="21">21</option>
-              <option value="22">22</option>
-              <option value="23">23</option>
-              <option value="24">24</option>
-              <option value="25">25</option>
-              <option value="26">26</option>
-              <option value="27">27</option>
-              <option value="28">28</option>
-              <option value="29">29</option>
-              <option value="30">30</option>
-              <option value="31">31</option>
-              <option value="32">32</option>
-              <option value="33">33</option>
-              <option value="34">34</option>
-              <option value="35">35</option>
-              <option value="36">36</option>
-              <option value="37">37</option>
-              <option value="38">38</option>
-              <option value="39">39</option>
-              <option value="40">40</option>
-              <option value="41">41</option>
-              <option value="42">42</option>
-              <option value="43">43</option>
-              <option value="44">44</option>
-              <option value="45">45</option>
-              <option value="46">46</option>
-              <option value="47">47</option>
-              <option value="48">48</option>
-              <option value="49">49</option>
-              <option value="50">50</option>
-              <option value="51">51</option>
-              <option value="52">52</option>
-              <option value="53">53</option>
-            </select>
-          </label>
           <label>
-            Score lesstof (hoe moeilijk was het vak?) *
-            <select name="score-lesstof-wafs" required>
+            <span>
+              Score uitleg (hoe duidelijk was het uitgelegd?):
+              <strong><span aria-label="required">*</span></strong>
+            </span>
+            <select name="score-uitleg-wafs" aria-required required>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
-              <option value="10">10</option>
-            </select>
-          </label>
-          <label>
-            Score uitleg (hoe duidelijk was het uitgelegd?) *
-            <select name="score-uitleg-wafs" required>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
-              <option value="10">10</option>
-            </select>
-          </label>
-          <label>
-            Score eigen inzicht (hoe goed snap je het nu?) *
-            <select name="score-uitleg-wafs" required>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
-              <option value="10">10</option>
             </select>
           </label>
           <br />
+          <label>
+            <span>
+              Score eigen inzicht (hoe goed snap je het nu?):
+              <strong><span aria-label="required">*</span></strong>
+            </span>
+            <select name="score-uitleg-wafs" aria-required required>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select>
+          </label>
+          <br />
+          <input type="submit" value="Submit" />
         </fieldset>
-        <fieldset>
+      </form>
+      <br />
+      <form id="cssttr-form" action="/cssttr" method="POST">
+        <input type="text" name="cssttr-token" hidden value="USERTOKEN" />
+        <fieldset id="cssttr">
           <legend>CSS To The Rescue</legend>
-          <label
-            >Docenten *
-            <input type="text" name="docenten-cssttr" required value="Sanne 't Hooft & Vasilis van Gemert"
-          /></label>
-          <label
-            >Beginweek (Voorbeeld: 2023-W04) *
-            <!-- <input type="text" required pattern="^([0-9]{4})-?W(5[0-3]|[1-4][0-9]|0[1-9])$" -->
-            <select name="beginweek-cssttr" required>
+          <pre>
+Docenten: Sanne & Vasilis
+Beginweek: 13/feb
+Eindweek: 6/mrt</pre
+          >
+          <label>
+            <span>
+              Score lesstof (hoe moeilijk was het vak?):
+              <strong><span aria-label="required">*</span></strong>
+            </span>
+            <select name="score-lesstof-cssttr" aria-required="true" required>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
-              <option value="10">10</option>
-              <option value="11">11</option>
-              <option value="12">12</option>
-              <option value="13">13</option>
-              <option value="14">14</option>
-              <option value="15">15</option>
-              <option value="16">16</option>
-              <option value="17">17</option>
-              <option value="18">18</option>
-              <option value="19">19</option>
-              <option value="20">20</option>
-              <option value="21">21</option>
-              <option value="22">22</option>
-              <option value="23">23</option>
-              <option value="24">24</option>
-              <option value="25">25</option>
-              <option value="26">26</option>
-              <option value="27">27</option>
-              <option value="28">28</option>
-              <option value="29">29</option>
-              <option value="30">30</option>
-              <option value="31">31</option>
-              <option value="32">32</option>
-              <option value="33">33</option>
-              <option value="34">34</option>
-              <option value="35">35</option>
-              <option value="36">36</option>
-              <option value="37">37</option>
-              <option value="38">38</option>
-              <option value="39">39</option>
-              <option value="40">40</option>
-              <option value="41">41</option>
-              <option value="42">42</option>
-              <option value="43">43</option>
-              <option value="44">44</option>
-              <option value="45">45</option>
-              <option value="46">46</option>
-              <option value="47">47</option>
-              <option value="48">48</option>
-              <option value="49">49</option>
-              <option value="50">50</option>
-              <option value="51">51</option>
-              <option value="52">52</option>
-              <option value="53">53</option>
             </select>
           </label>
           <br />
-          <label
-            >Eindweek (Voorbeeld: 2023-W04) *
-            <!-- <input type="text" required pattern="^([0-9]{4})-?W(5[0-3]|[1-4][0-9]|0[1-9])$" -->
-            <select name="eindweek-cssttr" required>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
-              <option value="10">10</option>
-              <option value="11">11</option>
-              <option value="12">12</option>
-              <option value="13">13</option>
-              <option value="14">14</option>
-              <option value="15">15</option>
-              <option value="16">16</option>
-              <option value="17">17</option>
-              <option value="18">18</option>
-              <option value="19">19</option>
-              <option value="20">20</option>
-              <option value="21">21</option>
-              <option value="22">22</option>
-              <option value="23">23</option>
-              <option value="24">24</option>
-              <option value="25">25</option>
-              <option value="26">26</option>
-              <option value="27">27</option>
-              <option value="28">28</option>
-              <option value="29">29</option>
-              <option value="30">30</option>
-              <option value="31">31</option>
-              <option value="32">32</option>
-              <option value="33">33</option>
-              <option value="34">34</option>
-              <option value="35">35</option>
-              <option value="36">36</option>
-              <option value="37">37</option>
-              <option value="38">38</option>
-              <option value="39">39</option>
-              <option value="40">40</option>
-              <option value="41">41</option>
-              <option value="42">42</option>
-              <option value="43">43</option>
-              <option value="44">44</option>
-              <option value="45">45</option>
-              <option value="46">46</option>
-              <option value="47">47</option>
-              <option value="48">48</option>
-              <option value="49">49</option>
-              <option value="50">50</option>
-              <option value="51">51</option>
-              <option value="52">52</option>
-              <option value="53">53</option>
-            </select>
-          </label>
           <label>
-            Score lesstof (hoe moeilijk was het vak?) *
-            <select name="score-lesstof-cssttr" required>
+            <span>
+              Score uitleg (hoe duidelijk was het uitgelegd?):
+              <strong><span aria-label="required">*</span></strong>
+            </span>
+            <select name="score-uitleg-cssttr" aria-required="true" required>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
-              <option value="10">10</option>
-            </select>
-          </label>
-          <label>
-            Score uitleg (hoe duidelijk was het uitgelegd?) *
-            <select name="score-uitleg-cssttr" required>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
-              <option value="10">10</option>
-            </select>
-          </label>
-          <label>
-            Score eigen inzicht (hoe goed snap je het nu?) *
-            <select name="score-uitleg-cssttr" required>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
-              <option value="10">10</option>
             </select>
           </label>
           <br />
+          <label>
+            <span>
+              Score eigen inzicht (hoe goed snap je het nu?):
+              <strong><span aria-label="required">*</span></strong>
+            </span>
+            <select name="score-uitleg-cssttr" aria-required="true" required>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select>
+          </label>
+          <br />
+          <input type="submit" value="Submit">
         </fieldset>
-        <fieldset>
-          <legend>Progressive Web App</legend>
-          <label
-            >Docenten *
-            <input type="text" name="docenten-pwa" required value="Declan Rek & Janno"
-          /></label>
-          <label
-            >Beginweek (Voorbeeld: 2023-W04) *
-            <!-- <input type="text" required pattern="^([0-9]{4})-?W(5[0-3]|[1-4][0-9]|0[1-9])$" -->
-            <select name="beginweek-pwa" required>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
-              <option value="10">10</option>
-              <option value="11">11</option>
-              <option value="12">12</option>
-              <option value="13">13</option>
-              <option value="14">14</option>
-              <option value="15">15</option>
-              <option value="16">16</option>
-              <option value="17">17</option>
-              <option value="18">18</option>
-              <option value="19">19</option>
-              <option value="20">20</option>
-              <option value="21">21</option>
-              <option value="22">22</option>
-              <option value="23">23</option>
-              <option value="24">24</option>
-              <option value="25">25</option>
-              <option value="26">26</option>
-              <option value="27">27</option>
-              <option value="28">28</option>
-              <option value="29">29</option>
-              <option value="30">30</option>
-              <option value="31">31</option>
-              <option value="32">32</option>
-              <option value="33">33</option>
-              <option value="34">34</option>
-              <option value="35">35</option>
-              <option value="36">36</option>
-              <option value="37">37</option>
-              <option value="38">38</option>
-              <option value="39">39</option>
-              <option value="40">40</option>
-              <option value="41">41</option>
-              <option value="42">42</option>
-              <option value="43">43</option>
-              <option value="44">44</option>
-              <option value="45">45</option>
-              <option value="46">46</option>
-              <option value="47">47</option>
-              <option value="48">48</option>
-              <option value="49">49</option>
-              <option value="50">50</option>
-              <option value="51">51</option>
-              <option value="52">52</option>
-              <option value="53">53</option>
-            </select>
+      </form>
+      <form id="submit-form" action="/submit" method="POST">
+        <input type="text" name="token" hidden value="USERTOKEN" />
+        <fieldset id="cssttr">
+          <legend>Formulier verzenden</legend>
+          <label>
+            <span>
+              Ik ga heb het formulier ingevuld en wil deze verzenden:
+              <strong><span aria-label="required">*</span></strong>
+            </span>
+            <input type="checkbox" name="klaar" id="klaar" required>
           </label>
           <br />
-          <label
-            >Eindweek (Voorbeeld: 2023-W04) *
-            <!-- <input type="text" required pattern="^([0-9]{4})-?W(5[0-3]|[1-4][0-9]|0[1-9])$" -->
-            <select name="eindweek-pwa" required>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
-              <option value="10">10</option>
-              <option value="11">11</option>
-              <option value="12">12</option>
-              <option value="13">13</option>
-              <option value="14">14</option>
-              <option value="15">15</option>
-              <option value="16">16</option>
-              <option value="17">17</option>
-              <option value="18">18</option>
-              <option value="19">19</option>
-              <option value="20">20</option>
-              <option value="21">21</option>
-              <option value="22">22</option>
-              <option value="23">23</option>
-              <option value="24">24</option>
-              <option value="25">25</option>
-              <option value="26">26</option>
-              <option value="27">27</option>
-              <option value="28">28</option>
-              <option value="29">29</option>
-              <option value="30">30</option>
-              <option value="31">31</option>
-              <option value="32">32</option>
-              <option value="33">33</option>
-              <option value="34">34</option>
-              <option value="35">35</option>
-              <option value="36">36</option>
-              <option value="37">37</option>
-              <option value="38">38</option>
-              <option value="39">39</option>
-              <option value="40">40</option>
-              <option value="41">41</option>
-              <option value="42">42</option>
-              <option value="43">43</option>
-              <option value="44">44</option>
-              <option value="45">45</option>
-              <option value="46">46</option>
-              <option value="47">47</option>
-              <option value="48">48</option>
-              <option value="49">49</option>
-              <option value="50">50</option>
-              <option value="51">51</option>
-              <option value="52">52</option>
-              <option value="53">53</option>
-            </select>
-          </label>
-          <label>
-            Score lesstof (hoe moeilijk was het vak?) *
-            <select name="score-lesstof-pwa" required>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
-              <option value="10">10</option>
-            </select>
-          </label>
-          <label>
-            Score uitleg (hoe duidelijk was het uitgelegd?) *
-            <select name="score-uitleg-pwa" required>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
-              <option value="10">10</option>
-            </select>
-          </label>
-          <label>
-            Score eigen inzicht (hoe goed snap je het nu?) *
-            <select name="score-uitleg-pwa" required>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
-              <option value="10">10</option>
-            </select>
-          </label>
-          <br />
+          <button type="submit">Submit</button>
         </fieldset>
-        <fieldset>
-          <legend>Browser Technologies</legend>
-          <label
-            >Docenten *
-            <input type="text" name="docenten-bt" required value="Die ene man & Vasilis van Gemert"
-          /></label>
-          <label
-            >Beginweek (Voorbeeld: 2023-W04) *
-            <!-- <input type="text" required pattern="^([0-9]{4})-?W(5[0-3]|[1-4][0-9]|0[1-9])$" -->
-            <select name="beginweek-bt" required>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
-              <option value="10">10</option>
-              <option value="11">11</option>
-              <option value="12">12</option>
-              <option value="13">13</option>
-              <option value="14">14</option>
-              <option value="15">15</option>
-              <option value="16">16</option>
-              <option value="17">17</option>
-              <option value="18">18</option>
-              <option value="19">19</option>
-              <option value="20">20</option>
-              <option value="21">21</option>
-              <option value="22">22</option>
-              <option value="23">23</option>
-              <option value="24">24</option>
-              <option value="25">25</option>
-              <option value="26">26</option>
-              <option value="27">27</option>
-              <option value="28">28</option>
-              <option value="29">29</option>
-              <option value="30">30</option>
-              <option value="31">31</option>
-              <option value="32">32</option>
-              <option value="33">33</option>
-              <option value="34">34</option>
-              <option value="35">35</option>
-              <option value="36">36</option>
-              <option value="37">37</option>
-              <option value="38">38</option>
-              <option value="39">39</option>
-              <option value="40">40</option>
-              <option value="41">41</option>
-              <option value="42">42</option>
-              <option value="43">43</option>
-              <option value="44">44</option>
-              <option value="45">45</option>
-              <option value="46">46</option>
-              <option value="47">47</option>
-              <option value="48">48</option>
-              <option value="49">49</option>
-              <option value="50">50</option>
-              <option value="51">51</option>
-              <option value="52">52</option>
-              <option value="53">53</option>
-            </select>
-          </label>
-          <br />
-          <label
-            >Eindweek (Voorbeeld: 2023-W04) *
-            <!-- <input type="text" required pattern="^([0-9]{4})-?W(5[0-3]|[1-4][0-9]|0[1-9])$" -->
-            <select name="eindweek-bt" required>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
-              <option value="10">10</option>
-              <option value="11">11</option>
-              <option value="12">12</option>
-              <option value="13">13</option>
-              <option value="14">14</option>
-              <option value="15">15</option>
-              <option value="16">16</option>
-              <option value="17">17</option>
-              <option value="18">18</option>
-              <option value="19">19</option>
-              <option value="20">20</option>
-              <option value="21">21</option>
-              <option value="22">22</option>
-              <option value="23">23</option>
-              <option value="24">24</option>
-              <option value="25">25</option>
-              <option value="26">26</option>
-              <option value="27">27</option>
-              <option value="28">28</option>
-              <option value="29">29</option>
-              <option value="30">30</option>
-              <option value="31">31</option>
-              <option value="32">32</option>
-              <option value="33">33</option>
-              <option value="34">34</option>
-              <option value="35">35</option>
-              <option value="36">36</option>
-              <option value="37">37</option>
-              <option value="38">38</option>
-              <option value="39">39</option>
-              <option value="40">40</option>
-              <option value="41">41</option>
-              <option value="42">42</option>
-              <option value="43">43</option>
-              <option value="44">44</option>
-              <option value="45">45</option>
-              <option value="46">46</option>
-              <option value="47">47</option>
-              <option value="48">48</option>
-              <option value="49">49</option>
-              <option value="50">50</option>
-              <option value="51">51</option>
-              <option value="52">52</option>
-              <option value="53">53</option>
-            </select>
-          </label>
-          <label>
-            Score lesstof (hoe moeilijk was het vak?) *
-            <select name="score-lesstof-bt" required>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
-              <option value="10">10</option>
-            </select>
-          </label>
-          <label>
-            Score uitleg (hoe duidelijk was het uitgelegd?) *
-            <select name="score-uitleg-bt" required>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
-              <option value="10">10</option>
-            </select>
-          </label>
-          <label>
-            Score eigen inzicht (hoe goed snap je het nu?) *
-            <select name="score-uitleg-bt" required>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
-              <option value="10">10</option>
-            </select>
-          </label>
-          <br />
-        </fieldset>
-        <fieldset>
-          <legend>Browser Technologies</legend>
-          <label
-            >Docenten *
-            <input type="text" name="docenten-bt" required value="Peter-Paul & Vasilis van Gemert"
-          /></label>
-          <label
-            >Beginweek (Voorbeeld: 2023-W04) *
-            <!-- <input type="text" required pattern="^([0-9]{4})-?W(5[0-3]|[1-4][0-9]|0[1-9])$" -->
-            <select name="beginweek-bt" required>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
-              <option value="10">10</option>
-              <option value="11">11</option>
-              <option value="12">12</option>
-              <option value="13">13</option>
-              <option value="14">14</option>
-              <option value="15">15</option>
-              <option value="16">16</option>
-              <option value="17">17</option>
-              <option value="18">18</option>
-              <option value="19">19</option>
-              <option value="20">20</option>
-              <option value="21">21</option>
-              <option value="22">22</option>
-              <option value="23">23</option>
-              <option value="24">24</option>
-              <option value="25">25</option>
-              <option value="26">26</option>
-              <option value="27">27</option>
-              <option value="28">28</option>
-              <option value="29">29</option>
-              <option value="30">30</option>
-              <option value="31">31</option>
-              <option value="32">32</option>
-              <option value="33">33</option>
-              <option value="34">34</option>
-              <option value="35">35</option>
-              <option value="36">36</option>
-              <option value="37">37</option>
-              <option value="38">38</option>
-              <option value="39">39</option>
-              <option value="40">40</option>
-              <option value="41">41</option>
-              <option value="42">42</option>
-              <option value="43">43</option>
-              <option value="44">44</option>
-              <option value="45">45</option>
-              <option value="46">46</option>
-              <option value="47">47</option>
-              <option value="48">48</option>
-              <option value="49">49</option>
-              <option value="50">50</option>
-              <option value="51">51</option>
-              <option value="52">52</option>
-              <option value="53">53</option>
-            </select>
-          </label>
-          <br />
-          <label
-            >Eindweek (Voorbeeld: 2023-W04) *
-            <!-- <input type="text" required pattern="^([0-9]{4})-?W(5[0-3]|[1-4][0-9]|0[1-9])$" -->
-            <select name="eindweek-bt" required>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
-              <option value="10">10</option>
-              <option value="11">11</option>
-              <option value="12">12</option>
-              <option value="13">13</option>
-              <option value="14">14</option>
-              <option value="15">15</option>
-              <option value="16">16</option>
-              <option value="17">17</option>
-              <option value="18">18</option>
-              <option value="19">19</option>
-              <option value="20">20</option>
-              <option value="21">21</option>
-              <option value="22">22</option>
-              <option value="23">23</option>
-              <option value="24">24</option>
-              <option value="25">25</option>
-              <option value="26">26</option>
-              <option value="27">27</option>
-              <option value="28">28</option>
-              <option value="29">29</option>
-              <option value="30">30</option>
-              <option value="31">31</option>
-              <option value="32">32</option>
-              <option value="33">33</option>
-              <option value="34">34</option>
-              <option value="35">35</option>
-              <option value="36">36</option>
-              <option value="37">37</option>
-              <option value="38">38</option>
-              <option value="39">39</option>
-              <option value="40">40</option>
-              <option value="41">41</option>
-              <option value="42">42</option>
-              <option value="43">43</option>
-              <option value="44">44</option>
-              <option value="45">45</option>
-              <option value="46">46</option>
-              <option value="47">47</option>
-              <option value="48">48</option>
-              <option value="49">49</option>
-              <option value="50">50</option>
-              <option value="51">51</option>
-              <option value="52">52</option>
-              <option value="53">53</option>
-            </select>
-          </label>
-          <label>
-            Score lesstof (hoe moeilijk was het vak?) *
-            <select name="score-lesstof-bt" required>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
-              <option value="10">10</option>
-            </select>
-          </label>
-          <label>
-            Score uitleg (hoe duidelijk was het uitgelegd?) *
-            <select name="score-uitleg-bt" required>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
-              <option value="10">10</option>
-            </select>
-          </label>
-          <label>
-            Score eigen inzicht (hoe goed snap je het nu?) *
-            <select name="score-uitleg-bt" required>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
-              <option value="10">10</option>
-            </select>
-          </label>
-          <br />
-        </fieldset>
-        <fieldset>
-          <legend>Real-Time Web</legend>
-          <label
-            >Docenten *
-            <input type="text" name="docenten-rtw" required value="Justus & Shyanta"
-          /></label>
-          <label
-            >Beginweek (Voorbeeld: 2023-W04) *
-            <!-- <input type="text" required pattern="^([0-9]{4})-?W(5[0-3]|[1-4][0-9]|0[1-9])$" -->
-            <select name="beginweek-rtw" required>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
-              <option value="10">10</option>
-              <option value="11">11</option>
-              <option value="12">12</option>
-              <option value="13">13</option>
-              <option value="14">14</option>
-              <option value="15">15</option>
-              <option value="16">16</option>
-              <option value="17">17</option>
-              <option value="18">18</option>
-              <option value="19">19</option>
-              <option value="20">20</option>
-              <option value="21">21</option>
-              <option value="22">22</option>
-              <option value="23">23</option>
-              <option value="24">24</option>
-              <option value="25">25</option>
-              <option value="26">26</option>
-              <option value="27">27</option>
-              <option value="28">28</option>
-              <option value="29">29</option>
-              <option value="30">30</option>
-              <option value="31">31</option>
-              <option value="32">32</option>
-              <option value="33">33</option>
-              <option value="34">34</option>
-              <option value="35">35</option>
-              <option value="36">36</option>
-              <option value="37">37</option>
-              <option value="38">38</option>
-              <option value="39">39</option>
-              <option value="40">40</option>
-              <option value="41">41</option>
-              <option value="42">42</option>
-              <option value="43">43</option>
-              <option value="44">44</option>
-              <option value="45">45</option>
-              <option value="46">46</option>
-              <option value="47">47</option>
-              <option value="48">48</option>
-              <option value="49">49</option>
-              <option value="50">50</option>
-              <option value="51">51</option>
-              <option value="52">52</option>
-              <option value="53">53</option>
-            </select>
-          </label>
-          <br />
-          <label
-            >Eindweek (Voorbeeld: 2023-W04) *
-            <!-- <input type="text" required pattern="^([0-9]{4})-?W(5[0-3]|[1-4][0-9]|0[1-9])$" -->
-            <select name="eindweek-rtw" required>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
-              <option value="10">10</option>
-              <option value="11">11</option>
-              <option value="12">12</option>
-              <option value="13">13</option>
-              <option value="14">14</option>
-              <option value="15">15</option>
-              <option value="16">16</option>
-              <option value="17">17</option>
-              <option value="18">18</option>
-              <option value="19">19</option>
-              <option value="20">20</option>
-              <option value="21">21</option>
-              <option value="22">22</option>
-              <option value="23">23</option>
-              <option value="24">24</option>
-              <option value="25">25</option>
-              <option value="26">26</option>
-              <option value="27">27</option>
-              <option value="28">28</option>
-              <option value="29">29</option>
-              <option value="30">30</option>
-              <option value="31">31</option>
-              <option value="32">32</option>
-              <option value="33">33</option>
-              <option value="34">34</option>
-              <option value="35">35</option>
-              <option value="36">36</option>
-              <option value="37">37</option>
-              <option value="38">38</option>
-              <option value="39">39</option>
-              <option value="40">40</option>
-              <option value="41">41</option>
-              <option value="42">42</option>
-              <option value="43">43</option>
-              <option value="44">44</option>
-              <option value="45">45</option>
-              <option value="46">46</option>
-              <option value="47">47</option>
-              <option value="48">48</option>
-              <option value="49">49</option>
-              <option value="50">50</option>
-              <option value="51">51</option>
-              <option value="52">52</option>
-              <option value="53">53</option>
-            </select>
-          </label>
-          <label>
-            Score lesstof (hoe moeilijk was het vak?) *
-            <select name="score-lesstof-rtw" required>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
-              <option value="10">10</option>
-            </select>
-          </label>
-          <label>
-            Score uitleg (hoe duidelijk was het uitgelegd?) *
-            <select name="score-uitleg-rtw" required>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
-              <option value="10">10</option>
-            </select>
-          </label>
-          <label>
-            Score eigen inzicht (hoe goed snap je het nu?) *
-            <select name="score-uitleg-rtw" required>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
-              <option value="10">10</option>
-            </select>
-          </label>
-          <br />
-        </fieldset>
-
-        <button type="submit">Submit</button>
       </form>
     </main>
   </body>
