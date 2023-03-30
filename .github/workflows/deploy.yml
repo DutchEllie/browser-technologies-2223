@@ -1,0 +1,29 @@
+name: Deploy on my own server using Docker Compose and SSH
+
+on: 
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy_to_server:
+    name: Deploy to server
+    runs-on: self-hosted
+    steps:
+      - name: Deploy to server via SSH action
+        uses: appleboy/ssh-action@master
+        with:
+          host: localhost
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.PRIVATE_KEY }}
+          script: |
+            if [ ! -d browser-technologies-2223 ] 
+              then
+                git clone https://github.com/DutchEllie/browser-technologies-2223.git
+            fi
+
+            cd browser-technologies-2223
+            docker compose down
+            git pull
+            docker compose build
+            docker compose up -d
