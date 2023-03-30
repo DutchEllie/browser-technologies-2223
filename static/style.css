@@ -1,5 +1,6 @@
 * {
 	font-family: sans-serif;
+	box-sizing: border-box;
 }
 
 
@@ -74,6 +75,16 @@ fieldset, input {
 	border-radius: 5px;
 }
 
+/* Zieke pijn */
+fieldset + a, fieldset + a + a {
+	/* display: block; */
+	width: fit-content;
+	height: auto;
+	padding: 0.5rem;
+	background-color: cornflowerblue;
+	border-radius: 5px;
+}
+
 input[type="text"],
 input[type="email"],
 input[type="number"] {
@@ -106,3 +117,19 @@ input[type="submit"] {
 		padding: 2rem;
 	}
 }
+
+form > div a {
+	background: cornflowerblue;
+	margin: 1em 0;
+	padding: .5em 1em;
+	border-radius: .3em;
+	text-decoration: none;
+	color: white;
+}
+
+form > div {
+	padding: 0rem 0.75rem;
+	display: flex;
+	justify-content: space-between;
+	flex-direction: row-reverse;
+}	

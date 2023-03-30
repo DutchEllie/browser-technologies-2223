@@ -23,3 +23,10 @@ Voor elk `<form>` element moet de gebruiker na het invullen deze submitten.
 Als dit formulier wordt verzonden wordt dit met een POST request gedaan.
 De token van de gebruiker wordt meegestuurd door een hidden input veld waar de gebruikers token in geplaatst wordt, en de data wordt op de server opgeslagen.
 De volgende keer dat de gebruiker de pagina laadt, **worden de al gesubmitte formulieren op de server voorgerenderd om alle data te bevatten.**
+
+
+## TODO
+
+* Think about how to show progress. Do as much as you can without Javascript
+* Change select score to something else.
+* 

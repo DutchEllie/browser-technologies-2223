@@ -7,11 +7,12 @@ Things Javascript does:
 - When the user has finally filled in everything, the submit button on the last page gets taken over by Javascript and submits every form (async) and then finally submits the last confirmation.
 */
 
-// This is only all of the input submits in the individual forms, because the final one is a button
-// TODO: move this if statement around everything here
+
+const allForms = document.querySelectorAll('form');
+
 if (window.localStorage) {
+	// This is only all of the input submits in the individual forms, because the final one is a button
 	const allSubmitInputs = document.querySelectorAll('input[type="submit"]');
-	const allForms = document.querySelectorAll('form');
 
 	allSubmitInputs.forEach(elem => {
 		elem.classList.add("invisible");
@@ -98,6 +99,32 @@ if (window.localStorage) {
 		})
 	})
 }
+
+// Handle final submit
+const finalSubmitForm = document.querySelector('#submit-form');
+finalSubmitForm.addEventListener('submit', event => {
+	// Do not submit the form yet
+	event.preventDefault();
+
+	// Submit each form to the server
+	const submitAll = async () => {
+		allForms.forEach(elem => {
+			if (elem.getAttribute('id') != "submit-form") {
+				elem.onsubmit = (event) => {
+					event.preventDefault();
+				}
+				elem.submit();
+			}
+		})
+	}
+
+	submitAll().then(() => {
+		// finalSubmitForm.submit();
+	}) 
+	// Now finally submit yourself
+	// finalSubmitButton.submit();
+	return false;
+}) 
 
 
 
