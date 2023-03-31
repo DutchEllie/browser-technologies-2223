@@ -3,6 +3,11 @@
 	box-sizing: border-box;
 }
 
+body {
+	max-width: 30em;
+	margin: auto;
+	padding: 1rem;
+}
 
 /* fieldset > label, nav > a{
 	display: block;
@@ -14,9 +19,38 @@ label {
 	width: fit-content;
 }
 
+label:last-of-type, label:last-of-type input {
+	margin-bottom: 0;
+}
+
+dl {
+	margin-top: 0;
+}
+
+dt::after {
+  content: ": ";
+}
+
+dt {
+	display: inline;
+}
+
+dd {
+	display: inline;
+	margin-left: 0;
+}
+
+dd + dd::before {
+	content: '& ';
+}
+
 /* label > span {
 	margin-bottom: 1rem;
 } */
+
+input, button {
+	font: inherit;
+}
 
 label > input, label > select {
 	display: block;
@@ -25,7 +59,7 @@ label > input, label > select {
 }
 
 fieldset {
-	padding: 1.5rem 1rem 1.5rem 1rem;
+	padding: 1.5rem 1.5rem 1.5rem 1.5rem;
 }
 
 nav > a{
@@ -75,15 +109,64 @@ fieldset, input {
 	border-radius: 5px;
 }
 
-/* Zieke pijn */
-fieldset + a, fieldset + a + a {
-	/* display: block; */
-	width: fit-content;
-	height: auto;
-	padding: 0.5rem;
-	background-color: cornflowerblue;
-	border-radius: 5px;
+form > div a, form > div button {
+	margin: 1em 0;
+	padding: .5em 1em;
+	border-radius: .3em;
+	border: 0;
 }
+
+form > div a:last-of-type, form > div button:first-of-type + a {
+	background-color: transparent;
+	color: black;
+	text-decoration: underline;
+	text-underline-offset: 2px;
+}
+
+form > div a:first-of-type, form > div button {
+	background: cornflowerblue;
+	text-decoration: none;
+	color: white;
+}
+
+form > div {
+	padding: 0rem 0.75rem;
+	display: flex;
+	justify-content: space-between;
+	flex-direction: row-reverse;
+}	
+
+input[type="range"] {
+	margin-bottom: 0px;
+	width: 100%;
+}
+
+ruby > input[type="range"] {
+}
+
+ruby {
+	ruby-position: under;
+	width: 100%;
+}
+
+rt {
+	/* padding-top: 1rem; */
+	margin-top: 0.5rem;
+	font-size: small;
+}
+
+/* datalist {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+  writing-mode: sideways-rl;
+  width: 200px;
+}
+
+option {
+	width: fit-content;
+  padding: 0;
+} */
 
 input[type="text"],
 input[type="email"],
@@ -113,23 +196,7 @@ input[type="submit"] {
 }
 
 @media (min-width: 768px) {
-	fieldset {
+	/* fieldset {
 		padding: 2rem;
-	}
+	} */
 }
-
-form > div a {
-	background: cornflowerblue;
-	margin: 1em 0;
-	padding: .5em 1em;
-	border-radius: .3em;
-	text-decoration: none;
-	color: white;
-}
-
-form > div {
-	padding: 0rem 0.75rem;
-	display: flex;
-	justify-content: space-between;
-	flex-direction: row-reverse;
-}	

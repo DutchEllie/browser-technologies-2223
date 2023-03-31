@@ -7,9 +7,97 @@ Things Javascript does:
 - When the user has finally filled in everything, the submit button on the last page gets taken over by Javascript and submits every form (async) and then finally submits the last confirmation.
 */
 
-
 const allForms = document.querySelectorAll('form');
 
+// FIRST!!!!
+// Change all fallback input type "text" score fields to "range".
+const allScoreFieldLabels = document.querySelectorAll('.score-labels');
+const hideOnJSElements = document.querySelectorAll('.hide-on-js');
+
+hideOnJSElements.forEach(elem => {
+	elem.classList.add('invisible');
+})
+
+// inputName = the "name" attribute on the range
+// required = bool
+// label = the text in the label
+function makeRangeElement(inputName, required, label) {
+	const labelText = document.createElement('span');
+	labelText.insertAdjacentText('afterbegin', label + ' ');
+
+	// If required is true, then append the required thingy
+	if (required) {
+		const strongElement = document.createElement('strong');
+		const spanElement = document.createElement('span');
+		spanElement.ariaLabel = 'required';
+		spanElement.textContent = '*';
+		strongElement.appendChild(spanElement);
+
+		labelText.insertAdjacentElement("beforeend", strongElement);
+	}
+
+	const rubyElement = document.createElement('ruby');
+	const rpElement1 = document.createElement('rp');
+	const rpElement2 = document.createElement('rp');
+	const rtElement = document.createElement('rt');
+	const rangeElement = document.createElement('input');
+
+	rangeElement.type = 'range';
+	rangeElement.setAttribute('list', 'range-values')
+	rangeElement.name = inputName;
+	rangeElement.min = '1';
+	rangeElement.max = '10';
+	if (required) {
+		rangeElement.setAttribute('required', '');
+		rangeElement.ariaRequired = 'true';
+	}
+
+	rubyElement.appendChild(rangeElement);
+	rpElement1.textContent = '(';
+	rpElement2.textContent = ')';
+	rtElement.textContent = '1 5 10';
+	rubyElement.appendChild(rpElement1);
+	rubyElement.appendChild(rtElement);
+	rubyElement.appendChild(rpElement2);
+
+	// const div = document.createElement('div');
+	// div.appendChild(labelText);
+	// div.appendChild(rubyElement);
+
+	return {
+		labelText: labelText,
+		ruby: rubyElement
+	}
+}
+
+function changeTextInputsToRangeInputs() {
+	allScoreFieldLabels.forEach(elem => {
+		const labelSpan = elem.querySelector('span');
+		const labelText = labelSpan.firstChild.textContent.trim();
+		// if (labelSpan.firstElementChild && labelSpan.firstElementChild.tagName == 'STRONG') {
+		// 	const strongInLabel = labelSpan.firstElementChild;
+		// 	console.log(strongInLabel)
+		// 	// strongInLabel.innerHTML = '';
+		// 	const labelSpanWithoutStrong = labelSpan.removeChild(strongInLabel);
+		// 	const labelText = labelSpanWithoutStrong.textContent;
+		// 	console.log(labelSpanWithoutStrong);
+		// 	console.log(labelText);
+
+		// }
+		const inputElement = elem.querySelector('input');
+		const inputName = inputElement.name;
+		const required = inputElement.required;
+
+		const fullLabelContent = makeRangeElement(inputName, required, labelText);
+
+		elem.replaceChildren(fullLabelContent.labelText, fullLabelContent.ruby);
+	})
+}
+changeTextInputsToRangeInputs();
+
+
+// SECOND
+// Handle local storage!!
 if (window.localStorage) {
 	// This is only all of the input submits in the individual forms, because the final one is a button
 	const allSubmitInputs = document.querySelectorAll('input[type="submit"]');
@@ -125,9 +213,3 @@ finalSubmitForm.addEventListener('submit', event => {
 	// finalSubmitButton.submit();
 	return false;
 }) 
-
-
-
-// window.addEventListener("load", (event) => {
-
-// })

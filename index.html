@@ -34,11 +34,16 @@
       <p>
         <strong
           >Velden gemarkeerd met <span aria-label="required">*</span> zijn
-          verplicht! </strong
-        >
+          verplicht!
+        </strong>
       </p>
       <form id="personal-info-form" action="/personal-info" method="POST">
-        <input type="text" name="personal-info-token" hidden value="USERTOKEN" />
+        <input
+          type="text"
+          name="personal-info-token"
+          hidden
+          value="USERTOKEN"
+        />
         <fieldset id="personal-info">
           <legend>Persoonlijke informatie</legend>
           <label>
@@ -46,12 +51,21 @@
               >Voornaam:
               <strong><span aria-label="required">*</span></strong></span
             >
-            <input type="text" placeholder="Voornaam *" name="voornaam" aria-required="true" required
+            <input
+              type="text"
+              placeholder="Voornaam *"
+              name="voornaam"
+              aria-required="true"
+              required
           /></label>
           <br />
           <label
             >Tussenvoegsel:
-            <input type="text" name="tussenvoegsel" placeholder="Tussenvoegsel"/>
+            <input
+              type="text"
+              name="tussenvoegsel"
+              placeholder="Tussenvoegsel"
+            />
           </label>
           <br />
           <label
@@ -59,7 +73,13 @@
               >Achternaam:
               <strong><span aria-label="required">*</span></strong>
             </span>
-            <input type="text" placeholder="Achternaam *" name="achternaam" aria-required="true" required />
+            <input
+              type="text"
+              placeholder="Achternaam *"
+              name="achternaam"
+              aria-required="true"
+              required
+            />
           </label>
           <br />
           <!-- <div class="invalid-error">
@@ -70,7 +90,13 @@
               >Email:
               <strong><span aria-label="required">*</span></strong>
             </span>
-            <input type="email" name="email" placeholder="Email *" aria-required="true" required />
+            <input
+              type="email"
+              name="email"
+              placeholder="Email *"
+              aria-required="true"
+              required
+            />
           </label>
           <br />
           <label
@@ -78,13 +104,20 @@
               >Studentnummer:
               <strong><span aria-label="required">*</span></strong>
             </span>
-            <input type="number" name="studentnumber" placeholder="Studentnummer *" aria-required="true" required />
+            <input
+              type="number"
+              name="studentnumber"
+              placeholder="Studentnummer *"
+              aria-required="true"
+              required
+            />
           </label>
-          <br>
+          <br />
           <input type="submit" value="Submit" />
         </fieldset>
-        <div>  
+        <div>
           <a href="#wafs-form">Volgende</a>
+          <!-- <a href="#personal-info-form" hidden>Vorige</a> -->
         </div>
       </form>
       <br />
@@ -92,51 +125,73 @@
         <input type="text" name="wafs-token" hidden value="USERTOKEN" />
         <fieldset id="wafs">
           <legend>Web App From Scratch</legend>
-          <pre>
-Docenten: Joost & Robert
-Beginweek: 13/feb
-Eindweek: 6/mrt</pre
+          <dl>
+            <div>
+              <dt>Docenten</dt>
+              <dd>Joost</dd>
+              <dd>Robert</dd>
+            </div>
+            <div>
+              <dt>Beginweek</dt>
+              <dd>13/feb</dd>
+            </div>
+            <div>
+              <dt>Eindweek</dt>
+              <dd>6/mrt</dd>
+            </div>
+          </dl>
+          <span class="hide-on-js"
+            ><strong>Vul getallen in van 1 tot 10</strong></span
           >
           <br />
-          <label>
+          <label class="score-labels">
             <span>
               Score lesstof (hoe moeilijk was het vak?):
               <strong><span aria-label="required">*</span></strong>
             </span>
-            <select name="score-lesstof-wafs" aria-required required>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-            </select>
+            <input
+              placeholder="Getal van 1 tot 10"
+              type="text"
+              name="score-lesstof-wafs"
+              aria-required="true"
+              required
+              pattern="^[0-9]$"
+            />
           </label>
           <br />
-          <label>
+          <label class="score-labels">
             <span>
               Score uitleg (hoe duidelijk was het uitgelegd?):
               <strong><span aria-label="required">*</span></strong>
             </span>
-            <select name="score-uitleg-wafs" aria-required required>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-            </select>
+            <input
+              placeholder="Getal van 1 tot 10"
+              type="text"
+              name="score-uitleg-wafs"
+              aria-required="true"
+              required
+              pattern="^[0-9]$"
+            />
           </label>
           <br />
-          <label>
+          <label class="score-labels">
             <span>
               Score eigen inzicht (hoe goed snap je het nu?):
               <strong><span aria-label="required">*</span></strong>
             </span>
-            <select name="score-uitleg-wafs" aria-required required>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-            </select>
+            <input
+              placeholder="Getal van 1 tot 10"
+              type="text"
+              name="score-eigen-inzicht-wafs"
+              aria-required="true"
+              required
+              pattern="^[0-9]$"
+            />
           </label>
           <br />
           <input type="submit" value="Submit" />
         </fieldset>
-        <div>  
+        <div>
           <a href="#cssttr-form">Volgende</a>
           <a href="#personal-info-form">Vorige</a>
         </div>
@@ -146,50 +201,76 @@ Eindweek: 6/mrt</pre
         <input type="text" name="cssttr-token" hidden value="USERTOKEN" />
         <fieldset id="cssttr">
           <legend>CSS To The Rescue</legend>
-          <pre>
-Docenten: Sanne & Vasilis
-Beginweek: 13/feb
-Eindweek: 6/mrt</pre
+          <dl>
+            <div>
+              <dt>Docenten</dt>
+              <dd>Sanne & Vasilis</dd>
+            </div>
+            <div>
+              <dt>Beginweek</dt>
+              <dd>13/feb</dd>
+            </div>
+            <div>
+              <dt>Eindweek</dt>
+              <dd>6/mrt</dd>
+            </div>
+          </dl>
+          <span class="hide-on-js"
+            ><strong>Vul getallen in van 1 tot 10</strong></span
           >
-          <label>
+          <br />
+          <label class="score-labels">
             <span>
               Score lesstof (hoe moeilijk was het vak?):
               <strong><span aria-label="required">*</span></strong>
             </span>
-            <select name="score-lesstof-cssttr" aria-required="true" required>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-            </select>
+            <input
+              placeholder="Getal van 1 tot 10"
+              type="text"
+              name="score-lesstof-cssttr"
+              aria-required="true"
+              required
+              pattern="^[0-9]$"
+            />
           </label>
           <br />
-          <label>
+          <label class="score-labels">
             <span>
               Score uitleg (hoe duidelijk was het uitgelegd?):
               <strong><span aria-label="required">*</span></strong>
             </span>
-            <select name="score-uitleg-cssttr" aria-required="true" required>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-            </select>
+            <input
+              placeholder="Getal van 1 tot 10"
+              type="text"
+              name="score-uitleg-cssttr"
+              aria-required="true"
+              required
+              pattern="^[0-9]$"
+            />
           </label>
           <br />
-          <label>
+          <label class="score-labels">
             <span>
               Score eigen inzicht (hoe goed snap je het nu?):
               <strong><span aria-label="required">*</span></strong>
             </span>
-            <select name="score-uitleg-cssttr" aria-required="true" required>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-            </select>
+            <input
+              placeholder="Getal van 1 tot 10"
+              type="text"
+              name="score-eigen-inzicht-cssttr"
+              aria-required="true"
+              required
+              pattern="^[0-9]$"
+            />
+            <!-- <ruby>
+              <input list="range-values" type="range" name="score-eigen-inzicht-cssttr" aria-required="true" required min="1" max="10" >
+              <rp>(</rp><rt>1 5  10</rt><rp>)</rp>
+            </ruby> -->
           </label>
           <br />
-          <input type="submit" value="Submit">
+          <input type="submit" value="Submit" />
         </fieldset>
-        <div>  
+        <div>
           <a href="#submit-form">Volgende</a>
           <a href="#wafs-form">Vorige</a>
         </div>
@@ -203,16 +284,28 @@ Eindweek: 6/mrt</pre
               Ik ga heb het formulier ingevuld en wil deze verzenden:
               <strong><span aria-label="required">*</span></strong>
             </span>
-            <input type="checkbox" name="klaar" id="klaar" required>
+            <input type="checkbox" name="klaar" id="klaar" required />
           </label>
           <br />
-          <button type="submit">Submit</button>
         </fieldset>
-        <div>  
-          <!-- <a href="#cssttr-form">Volgende</a> -->
+        <div>
+          <button type="submit">Submit</button>
           <a href="#cssttr-form">Vorige</a>
+          <!-- <a href="#submit-form">Volgende</a> -->
         </div>
       </form>
+      <datalist id="range-values">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+      </datalist>
     </main>
   </body>
 </html>
