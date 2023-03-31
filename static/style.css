@@ -163,6 +163,7 @@ ruby > input[type="range"] {
 }
 
 ruby {
+	/* display: block; */
 	ruby-position: under;
 	width: 100%;
 }
@@ -259,7 +260,14 @@ input[type="submit"] {
 	}
 
 	nav > a{
-		text-decoration-color: rgb(158, 158, 255);
+		/* text-decoration-color: rgb(158, 158, 255); */
+		/* text-decoration-color: rgb(158, 158, 255); */
+		/* color: rgb(140,140,255) */
+	}
+
+	nav > a:visited {
+
+		color: #e196ff;
 	}
 
 	/* nav > a:visited {
