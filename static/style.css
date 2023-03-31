@@ -123,7 +123,7 @@ fieldset:valid {
 }
 
 fieldset, input {
-	border-radius: 5px;
+	/* border-radius: 5px; */
 }
 
 form > div a, form > div button {
@@ -135,7 +135,7 @@ form > div a, form > div button {
 
 form > div a:last-of-type, form > div button:first-of-type + a {
 	background-color: transparent;
-	color: black;
+	/* color: black; */
 	text-decoration: underline;
 	text-underline-offset: 2px;
 }
@@ -184,13 +184,43 @@ option {
 	width: fit-content;
   padding: 0;
 } */
-
 input[type="text"],
 input[type="email"],
 input[type="number"] {
 	/* height: 2rem; */
 	padding: 0.5rem;
 	font-size: 1.2rem;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	background-color: rgb(211, 210, 255);
+	border-radius: 5px;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus {
+	outline: none;
+	background-color: rgb(184, 183, 255);
+	/* border-top: 1px solid black; */
+}
+
+input[type="text"]:invalid,
+input[type="email"]:invalid,
+input[type="number"]:invalid {
+	border-bottom: 2px solid red;
+}
+
+input[type="text"]:placeholder-shown:invalid,
+input[type="email"]:placeholder-shown:invalid,
+input[type="number"]:placeholder-shown:invalid {
+	border-bottom: none;
+}
+
+input[type="text"]:valid,
+input[type="email"]:valid,
+input[type="number"]:valid {
+	border-bottom: 2px solid rgb(50, 250, 93);
 }
 
 input[type="submit"] {
@@ -216,4 +246,10 @@ input[type="submit"] {
 	/* fieldset {
 		padding: 2rem;
 	} */
+}
+
+@media (prefers-color-scheme: dark) {
+	input {
+		color: black
+	}
 }

@@ -8,6 +8,7 @@ Things Javascript does:
 */
 
 const allForms = document.querySelectorAll('form');
+const maxForms = 7;
 
 // FIRST!!!!
 // Change all fallback input type "text" score fields to "range".
@@ -186,6 +187,8 @@ if (window.localStorage) {
 			putFormDataInLocalStorage(formID, formJSON);
 		})
 	})
+
+	
 }
 
 // Handle final submit

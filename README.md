@@ -28,5 +28,5 @@ De volgende keer dat de gebruiker de pagina laadt, **worden de al gesubmitte for
 ## TODO
 
 * Think about how to show progress. Do as much as you can without Javascript
-* Change select score to something else.
+* Optie voor anoniem toevoegen
 * 
