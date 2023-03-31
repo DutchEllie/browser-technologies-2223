@@ -250,13 +250,21 @@ input[type="submit"] {
 }
 
 @media (prefers-color-scheme: dark) {
-	nav > a {
+	/* nav > a {
 		color: white;
+	} */
+
+	html {
+		background-color: #1c1b22;
 	}
 
-	nav > a:visited {
-		color: plum;
+	nav > a{
+		text-decoration-color: rgb(158, 158, 255);
 	}
+
+	/* nav > a:visited {
+		color: plum;
+	} */
 	input {
 		color: black
 	}
