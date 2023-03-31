@@ -28,6 +28,14 @@
           <br />
           <a href="#cssttr-form">3. CSS To The Rescue</a>
           <br />
+          <a href="#pwa-form">4. Progressive Web App</a>
+          <br />
+          <a href="#bt-form">5. Browser Technologies</a>
+          <br />
+          <a href="#rtw-form">6. Real-Time Web</a>
+          <br />
+          <a href="#hcd-form">7. Human Centered Design</a>
+          <br />
           <a href="#submit-form">Final. Verzend Formulier</a>
         </nav>
       </aside>
@@ -262,10 +270,6 @@
               required
               pattern="^[0-9]$"
             />
-            <!-- <ruby>
-              <input list="range-values" type="range" name="score-eigen-inzicht-cssttr" aria-required="true" required min="1" max="10" >
-              <rp>(</rp><rt>1 5  10</rt><rp>)</rp>
-            </ruby> -->
           </label>
           <br />
           <input type="submit" value="Submit" />
@@ -273,6 +277,306 @@
         <div>
           <a href="#submit-form">Volgende</a>
           <a href="#wafs-form">Vorige</a>
+        </div>
+      </form>
+      <form id="pwa-form" action="/pwa" method="POST">
+        <input type="text" name="pwa-token" hidden value="USERTOKEN" />
+        <fieldset id="pwa">
+          <legend>Progressive Web App</legend>
+          <dl>
+            <div>
+              <dt>Docenten</dt>
+              <dd>Janno</dd>
+              <dd>Declan</dd>
+            </div>
+            <div>
+              <dt>Beginweek</dt>
+              <dd>20/mrt</dd>
+            </div>
+            <div>
+              <dt>Eindweek</dt>
+              <dd>3/apr</dd>
+            </div>
+          </dl>
+          <span class="hide-on-js"
+            ><strong>Vul getallen in van 1 tot 10</strong></span
+          >
+          <br />
+          <label class="score-labels">
+            <span>
+              Score lesstof (hoe moeilijk was het vak?):
+              <strong><span aria-label="required">*</span></strong>
+            </span>
+            <input
+              placeholder="Getal van 1 tot 10"
+              type="text"
+              name="score-lesstof-pwa"
+              aria-required="true"
+              required
+              pattern="^[0-9]$"
+            />
+          </label>
+          <br />
+          <label class="score-labels">
+            <span>
+              Score uitleg (hoe duidelijk was het uitgelegd?):
+              <strong><span aria-label="required">*</span></strong>
+            </span>
+            <input
+              placeholder="Getal van 1 tot 10"
+              type="text"
+              name="score-uitleg-pwa"
+              aria-required="true"
+              required
+              pattern="^[0-9]$"
+            />
+          </label>
+          <br />
+          <label class="score-labels">
+            <span>
+              Score eigen inzicht (hoe goed snap je het nu?):
+              <strong><span aria-label="required">*</span></strong>
+            </span>
+            <input
+              placeholder="Getal van 1 tot 10"
+              type="text"
+              name="score-eigen-inzicht-pwa"
+              aria-required="true"
+              required
+              pattern="^[0-9]$"
+            />
+          </label>
+          <br />
+          <input type="submit" value="Submit" />
+        </fieldset>
+        <div>
+          <a href="#bt-form">Volgende</a>
+          <a href="#cssttr-form">Vorige</a>
+        </div>
+      </form>
+      <form id="bt-form" action="/bt" method="POST">
+        <input type="text" name="bt-token" hidden value="USERTOKEN" />
+        <fieldset id="bt">
+          <legend>Browser Technologies</legend>
+          <dl>
+            <div>
+              <dt>Docenten</dt>
+              <dd>Vasilis</dd>
+              <dd>Peter-Paul</dd>
+            </div>
+            <div>
+              <dt>Beginweek</dt>
+              <dd>20/mrt</dd>
+            </div>
+            <div>
+              <dt>Eindweek</dt>
+              <dd>3/apr</dd>
+            </div>
+          </dl>
+          <span class="hide-on-js"
+            ><strong>Vul getallen in van 1 tot 10</strong></span
+          >
+          <br />
+          <label class="score-labels">
+            <span>
+              Score lesstof (hoe moeilijk was het vak?):
+              <strong><span aria-label="required">*</span></strong>
+            </span>
+            <input
+              placeholder="Getal van 1 tot 10"
+              type="text"
+              name="score-lesstof-bt"
+              aria-required="true"
+              required
+              pattern="^[0-9]$"
+            />
+          </label>
+          <br />
+          <label class="score-labels">
+            <span>
+              Score uitleg (hoe duidelijk was het uitgelegd?):
+              <strong><span aria-label="required">*</span></strong>
+            </span>
+            <input
+              placeholder="Getal van 1 tot 10"
+              type="text"
+              name="score-uitleg-bt"
+              aria-required="true"
+              required
+              pattern="^[0-9]$"
+            />
+          </label>
+          <br />
+          <label class="score-labels">
+            <span>
+              Score eigen inzicht (hoe goed snap je het nu?):
+              <strong><span aria-label="required">*</span></strong>
+            </span>
+            <input
+              placeholder="Getal van 1 tot 10"
+              type="text"
+              name="score-eigen-inzicht-bt"
+              aria-required="true"
+              required
+              pattern="^[0-9]$"
+            />
+          </label>
+          <br />
+          <input type="submit" value="Submit" />
+        </fieldset>
+        <div>
+          <a href="#rtw-form">Volgende</a>
+          <a href="#pwa-form">Vorige</a>
+        </div>
+      </form>
+      <form id="rtw-form" action="/bt" method="POST">
+        <input type="text" name="rtw-token" hidden value="USERTOKEN" />
+        <fieldset id="rtw">
+          <legend>Real-Time Web</legend>
+          <dl>
+            <div>
+              <dt>Docenten</dt>
+              <dd>Justus</dd>
+              <dd>Shyanta</dd>
+            </div>
+            <div>
+              <dt>Beginweek</dt>
+              <dd>17/apr</dd>
+            </div>
+            <div>
+              <dt>Eindweek</dt>
+              <dd>8/mei</dd>
+            </div>
+          </dl>
+          <span class="hide-on-js"
+            ><strong>Vul getallen in van 1 tot 10</strong></span
+          >
+          <br />
+          <label class="score-labels">
+            <span>
+              Score lesstof (hoe moeilijk was het vak?):
+              <strong><span aria-label="required">*</span></strong>
+            </span>
+            <input
+              placeholder="Getal van 1 tot 10"
+              type="text"
+              name="score-lesstof-rtw"
+              aria-required="true"
+              required
+              pattern="^[0-9]$"
+            />
+          </label>
+          <br />
+          <label class="score-labels">
+            <span>
+              Score uitleg (hoe duidelijk was het uitgelegd?):
+              <strong><span aria-label="required">*</span></strong>
+            </span>
+            <input
+              placeholder="Getal van 1 tot 10"
+              type="text"
+              name="score-uitleg-rtw"
+              aria-required="true"
+              required
+              pattern="^[0-9]$"
+            />
+          </label>
+          <br />
+          <label class="score-labels">
+            <span>
+              Score eigen inzicht (hoe goed snap je het nu?):
+              <strong><span aria-label="required">*</span></strong>
+            </span>
+            <input
+              placeholder="Getal van 1 tot 10"
+              type="text"
+              name="score-eigen-inzicht-rtw"
+              aria-required="true"
+              required
+              pattern="^[0-9]$"
+            />
+          </label>
+          <br />
+          <input type="submit" value="Submit" />
+        </fieldset>
+        <div>
+          <a href="#hcd-form">Volgende</a>
+          <a href="#br-form">Vorige</a>
+        </div>
+      </form>
+      <form id="hcd-form" action="/bt" method="POST">
+        <input type="text" name="hcd-token" hidden value="USERTOKEN" />
+        <fieldset id="hcd">
+          <legend>Human Centered Design</legend>
+          <dl>
+            <div>
+              <dt>Docenten</dt>
+              <dd>Eric</dd>
+              <dd>Koop</dd>
+            </div>
+            <div>
+              <dt>Beginweek</dt>
+              <dd>17/apr</dd>
+            </div>
+            <div>
+              <dt>Eindweek</dt>
+              <dd>8/mei</dd>
+            </div>
+          </dl>
+          <span class="hide-on-js"
+            ><strong>Vul getallen in van 1 tot 10</strong></span
+          >
+          <br />
+          <label class="score-labels">
+            <span>
+              Score lesstof (hoe moeilijk was het vak?):
+              <strong><span aria-label="required">*</span></strong>
+            </span>
+            <input
+              placeholder="Getal van 1 tot 10"
+              type="text"
+              name="score-lesstof-hcd"
+              aria-required="true"
+              required
+              pattern="^[0-9]$"
+            />
+          </label>
+          <br />
+          <label class="score-labels">
+            <span>
+              Score uitleg (hoe duidelijk was het uitgelegd?):
+              <strong><span aria-label="required">*</span></strong>
+            </span>
+            <input
+              placeholder="Getal van 1 tot 10"
+              type="text"
+              name="score-uitleg-hcd"
+              aria-required="true"
+              required
+              pattern="^[0-9]$"
+            />
+          </label>
+          <br />
+          <label class="score-labels">
+            <span>
+              Score eigen inzicht (hoe goed snap je het nu?):
+              <strong><span aria-label="required">*</span></strong>
+            </span>
+            <input
+              placeholder="Getal van 1 tot 10"
+              type="text"
+              name="score-eigen-inzicht-hcd"
+              aria-required="true"
+              required
+              pattern="^[0-9]$"
+            />
+          </label>
+          <br />
+          <input type="submit" value="Submit" />
+        </fieldset>
+        <div>
+          <a href="#hcd-form">Volgende</a>
+          <a href="#rtw-form">Vorige</a>
         </div>
       </form>
       <form id="submit-form" action="/submit" method="POST">

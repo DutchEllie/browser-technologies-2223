@@ -96,9 +96,26 @@ form#cssttr-form:target {
 	display: block;
 }
 
+form#pwa-form:target {
+	display: block;
+}
+
+form#bt-form:target {
+	display: block;
+}
+
+form#rtw-form:target {
+	display: block;
+}
+
+form#hcd-form:target {
+	display: block;
+}
+
 form#submit-form:target {
 	display: block;
 }
+
 
 fieldset:valid {
 	outline-color: green;
