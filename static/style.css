@@ -137,6 +137,7 @@ form > div a, form > div button {
 form > div a:last-of-type, form > div button:first-of-type + a {
 	background-color: transparent;
 	/* color: black; */
+	color: rgb(211, 210, 255);
 	text-decoration: underline;
 	text-underline-offset: 2px;
 }

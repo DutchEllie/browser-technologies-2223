@@ -8,7 +8,11 @@ Things Javascript does:
 */
 
 const allForms = document.querySelectorAll('form');
-const maxForms = 7;
+
+// Is related to the progress bar
+// Update when you add or remove forms.
+// Includes all forms, including personal-info and submit!!
+const maxForms = 8;
 
 // FIRST!!!!
 // Change all fallback input type "text" score fields to "range".
@@ -100,6 +104,9 @@ changeTextInputsToRangeInputs();
 // SECOND
 // Handle local storage!!
 if (window.localStorage) {
+
+	computeProgress();
+
 	// This is only all of the input submits in the individual forms, because the final one is a button
 	const allSubmitInputs = document.querySelectorAll('input[type="submit"]');
 
@@ -178,6 +185,13 @@ if (window.localStorage) {
 	}
 	putFormInputValuesBackFromLocalStorage()
 
+	function computeProgress() {
+		var amountOfStores = window.localStorage.length;
+		const progress = amountOfStores / maxForms;
+
+		document.querySelector('progress').value = progress;
+	}
+
 	allForms.forEach(elem => {
 		elem.addEventListener('input', event => {
 			const formID = elem.getAttribute('id');
@@ -185,6 +199,9 @@ if (window.localStorage) {
 			// console.log(formJSON);
 			// Set the entire element
 			putFormDataInLocalStorage(formID, formJSON);
+
+			// Also, this is a convenient place to update the progress bar
+			computeProgress();
 		})
 	})
 
