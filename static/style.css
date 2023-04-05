@@ -161,10 +161,23 @@ form {
 	position: absolute;
 	background-color: white;
 	width: 100%;
+
+	z-index: 2
+}
+
+form::before {
+	content: '';
+	display: block;
+	position: absolute;
+	z-index: -1;
+	background-color: white;
+	width: 100%;
+	height: 100%;
 }
 
 form:first-of-type {
 	display: block;
+	z-index: 0;
 }
 
 /* form:last-of-type {
@@ -372,6 +385,10 @@ input[type="submit"] {
 	}
 
 	form {
+		background-color: #1c1b22;
+	}
+
+	form::before {
 		background-color: #1c1b22;
 	}
 
