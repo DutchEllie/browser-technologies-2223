@@ -391,9 +391,9 @@ input[type="submit"] {
 		background-color: #1c1b22;
 	}
 
-	/* form::before {
+	form::before {
 		background-color: #1c1b22;
-	} */
+	}
 
 	nav > a{
 		/* text-decoration-color: rgb(158, 158, 255); */
