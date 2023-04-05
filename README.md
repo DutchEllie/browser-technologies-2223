@@ -75,6 +75,17 @@ They are now input number elements, so everything works fine.
 
 Lynx also has no form validation at all, so that's not a factor here.
 
+
+## Things I did
+
+### Pagination
+
+To prevent the user to see many form elements, which can be overwhelming, the form elements are shown using target selectors.
+The first form is always shown, and any targetted form is overlaid on top of the first one.
+All forms are not shown by default using a `display: none`, except the first one, which is overwritten and has a `display: block`.
+They also have `position: absolute` set, so that they always overlay eachother when shown.
+By then setting a background color on the forms, it looks just like the previous one is hidden!
+
 <!-- ## Hoe werkt dit
 
 De gebruiker krijgt een URL met een token in de URL query params, deze is uniek aan deze gebruiker.

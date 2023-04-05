@@ -9,6 +9,10 @@ body {
 	padding: 1rem;
 }
 
+main {
+	position: relative;
+}
+
 h1 {
 	font-size: larger;
 }
@@ -154,21 +158,32 @@ nav > a:first-of-type:not(:target) {
 
 form {
 	display: none;
+	position: absolute;
+	background-color: white;
+	width: 100%;
 }
 
 form:first-of-type {
 	display: block;
 }
 
-form.invisible {
-	display: none;
+form:last-of-type {
+	height: 70vh;
 }
+
+/* form.invisible {
+	display: none;
+} */
 
 /* form:first-of-type:not(:target) {
 	display: none;
 } */
 
-form#personal-info-form:target {
+form:target {
+	display: block;
+}
+
+/* form#personal-info-form:target {
 	display: block;
 }
 
@@ -198,7 +213,7 @@ form#hcd-form:target {
 
 form#submit-form:target {
 	display: block;
-}
+} */
 
 
 fieldset:valid {
@@ -351,6 +366,10 @@ input[type="submit"] {
 	} */
 
 	html {
+		background-color: #1c1b22;
+	}
+
+	form {
 		background-color: #1c1b22;
 	}
 

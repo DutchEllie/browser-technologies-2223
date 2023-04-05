@@ -106,22 +106,22 @@ document.querySelector('nav > a[href="#personal-info-form"]').classList.add('inv
 // ACTUAL SECOND
 // Implement next buttons for form 
 
-document.querySelector('#personal-info-next').addEventListener('click', (event) => {
-	// document.querySelector('.progress-circle[href="#personal-info-form"]').classList.add('completed');
-	const personalInfoForm = document.querySelector('#personal-info-form');
+// document.querySelector('#personal-info-next').addEventListener('click', (event) => {
+// 	// document.querySelector('.progress-circle[href="#personal-info-form"]').classList.add('completed');
+// 	const personalInfoForm = document.querySelector('#personal-info-form');
 
-	if (! personalInfoForm.classList.contains('invisible')) {
-		personalInfoForm.classList.add('invisible');
-	}
-})
+// 	if (! personalInfoForm.classList.contains('invisible')) {
+// 		personalInfoForm.classList.add('invisible');
+// 	}
+// })
 
-document.querySelector('#wafs-form-previous').addEventListener('click', (event) => {
-	const personalInfoForm = document.querySelector('#personal-info-form');
+// document.querySelector('#wafs-form-previous').addEventListener('click', (event) => {
+// 	const personalInfoForm = document.querySelector('#personal-info-form');
 
-	if (personalInfoForm.classList.contains('invisible')) {
-		personalInfoForm.classList.remove('invisible');
-	}
-})
+// 	if (personalInfoForm.classList.contains('invisible')) {
+// 		personalInfoForm.classList.remove('invisible');
+// 	}
+// })
 
 // SECOND
 // Handle local storage!!
