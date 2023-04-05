@@ -7,6 +7,7 @@ body {
 	max-width: 30em;
 	margin: auto;
 	padding: 1rem;
+	/* background-color: blue; */
 }
 
 main {
@@ -155,12 +156,13 @@ nav > a:first-of-type:not(:target) {
 	display: none;
 } */
 
-
 form {
 	display: none;
 	position: absolute;
 	background-color: white;
 	width: 100%;
+	/* height: 40rem;
+	max-height: 70vh; */
 
 	z-index: 2
 }
@@ -178,6 +180,7 @@ form::before {
 form:first-of-type {
 	display: block;
 	z-index: 0;
+	/* background-color: hotpink; */
 }
 
 /* form:last-of-type {
@@ -194,8 +197,8 @@ form:first-of-type {
 
 form:target {
 	display: block;
-	height: 40rem;
-	max-height: 70vh;
+	/* height: 40rem;
+	max-height: 70vh; */
 }
 
 /* form#personal-info-form:target {
@@ -388,9 +391,9 @@ input[type="submit"] {
 		background-color: #1c1b22;
 	}
 
-	form::before {
+	/* form::before {
 		background-color: #1c1b22;
-	}
+	} */
 
 	nav > a{
 		/* text-decoration-color: rgb(158, 158, 255); */
