@@ -63,6 +63,10 @@ fieldset {
 	padding: 1.5rem 1.5rem 1.5rem 1.5rem;
 }
 
+fieldset > legend {
+	font-weight: 700;
+}
+
 nav > a{
 	display: block;
 }
