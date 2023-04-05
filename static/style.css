@@ -167,9 +167,9 @@ form:first-of-type {
 	display: block;
 }
 
-form:last-of-type {
+/* form:last-of-type {
 	height: 70vh;
-}
+} */
 
 /* form.invisible {
 	display: none;
@@ -181,6 +181,7 @@ form:last-of-type {
 
 form:target {
 	display: block;
+	height: 40rem;
 }
 
 /* form#personal-info-form:target {
