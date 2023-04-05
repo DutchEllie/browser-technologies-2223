@@ -19,7 +19,7 @@ label {
 	width: fit-content;
 }
 
-label:last-of-type, label:last-of-type input {
+form > label:last-of-type, form > label:last-of-type input {
 	margin-bottom: 0;
 }
 
@@ -74,6 +74,12 @@ br {
 aside {
 	/* float: left; */
 	width: fit-content;
+}
+
+.progress-label {
+	margin-bottom: 1rem;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 /* form { */
