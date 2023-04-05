@@ -9,6 +9,10 @@ body {
 	padding: 1rem;
 }
 
+h1 {
+	font-size: larger;
+}
+
 /* fieldset > label, nav > a{
 	display: block;
 } */
@@ -59,6 +63,10 @@ label > input, label > select {
 	width: 100%;
 }
 
+.score-labels > span {
+	display: block;
+}
+
 fieldset {
 	padding: 1.5rem 1.5rem 1.5rem 1.5rem;
 }
@@ -91,9 +99,74 @@ aside {
 	width: 100%; */
 /* } */
 
+.progress {
+	display: flex;
+	align-items: center;
+	gap: 5px;
+}
+
+.progress-circle {
+	display: flex;
+
+	justify-content: center;
+	align-items: center;
+	border: 4px solid powderblue;
+	width: 5rem;
+	height: 5rem;
+	border-radius: 50%;
+	text-align: center;
+	color: black;
+	text-decoration: none;
+}
+
+.progress-circle:hover {
+	background-color: aquamarine;
+}
+
+.completed {
+	background-color: lightgreen;
+	pointer-events: none;
+	cursor: default;
+}
+
+.completed:hover {
+	background-color: lightgreen;
+}
+
+/* .progress-circle > p {
+	
+	height: min-content;
+	margin: 0;
+} */
+
+/* .progress-circle + .progress-circle::before {
+	content: ' --> ';
+} */
+
+/* nav > a:first-of-type {
+
+}
+
+nav > a:first-of-type:not(:target) {
+	display: none;
+} */
+
+
 form {
 	display: none;
 }
+
+form:first-of-type {
+	display: block;
+}
+
+form.invisible {
+	display: none;
+}
+
+/* form:first-of-type:not(:target) {
+	display: none;
+} */
 
 form#personal-info-form:target {
 	display: block;
@@ -240,6 +313,16 @@ input[type="number"]:valid {
 input[type="submit"] {
 	padding: 0.5rem;
 	font-size: 1.2rem;
+}
+
+.submit-wrapper {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.submit-wrapper > p {
+	padding-left: 1rem;
 }
 
 .invalid-error {

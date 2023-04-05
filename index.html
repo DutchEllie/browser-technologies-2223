@@ -19,10 +19,11 @@
       <aside>
         <nav>
           <p>
-            <strong>Klik op een onderwerp om de enquete te starten.</strong> Vul alle velden in
-            alle onderwerpen in voordat je je antwoorden verstuurd!
+            <!-- <strong>Klik op een onderwerp om de enquete te starten.</strong> -->
+            Vul alle velden in alle onderwerpen in voordat je je antwoorden
+            verstuurd!
           </p>
-          <a href="#personal-info-form">1. Persoonlijk info</a>
+          <!-- <a href="#personal-info-form">1. Persoonlijk info</a>
           <br />
           <a href="#wafs-form">2. Web App From Scratch</a>
           <br />
@@ -36,8 +37,22 @@
           <br />
           <a href="#hcd-form">7. Human Centered Design</a>
           <br />
-          <a href="#submit-form">Final. Verzend Formulier</a>
+          <a href="#submit-form">Final. Verzend Formulier</a> -->
+
+          <a href="#personal-info-form">1. Persoonlijk info</a>
         </nav>
+
+        <!-- <div class="progress">
+          <a href="#personal-info-form" class="progress-circle">
+            Personal info
+          </a>
+          <div class="progress-arrow">
+            &RightArrow;
+          </div>
+          <a href="#wafs-form" class="progress-circle">
+            <p>WAFS</p>
+          </a>
+        </div> -->
       </aside>
       <p>
         <strong
@@ -45,10 +60,10 @@
           verplicht!
         </strong>
       </p>
-      <label class="progress-label">
+      <!-- <label class="progress-label">
         Form progressie:
         <progress max="1" value="0"></progress>
-      </label>
+      </label> -->
       <form id="personal-info-form" action="/personal-info" method="POST">
         <input
           type="text"
@@ -116,10 +131,13 @@
             />
           </label>
           <br />
-          <input type="submit" value="Submit" />
+          <div class="submit-wrapper">
+            <input type="submit" value="Submit" />
+            <p>Net begonnen! Ga zo door!</p>
+          </div>
         </fieldset>
         <div>
-          <a href="#wafs-form">Volgende</a>
+          <a href="#wafs-form" id="personal-info-next">Volgende</a>
           <!-- <a href="#personal-info-form" hidden>Vorige</a> -->
         </div>
       </form>
@@ -192,11 +210,14 @@
             />
           </label>
           <br />
-          <input type="submit" value="Submit" />
+          <div class="submit-wrapper">
+            <input type="submit" value="Submit" />
+            <p>Tweede form! Lekker bezig!</p>
+          </div>
         </fieldset>
         <div>
           <a href="#cssttr-form">Volgende</a>
-          <a href="#personal-info-form">Vorige</a>
+          <a id="wafs-form-previous" href="#personal-info-form">Vorige</a>
         </div>
       </form>
       <br />
@@ -268,7 +289,10 @@
             />
           </label>
           <br />
-          <input type="submit" value="Submit" />
+          <div class="submit-wrapper">
+            <input type="submit" value="Submit" />
+            <p>Derde form! Nog maar vier te gaan!</p>
+          </div>
         </fieldset>
         <div>
           <a href="#pwa-form">Volgende</a>
@@ -343,7 +367,10 @@
             />
           </label>
           <br />
-          <input type="submit" value="Submit" />
+          <div class="submit-wrapper">
+            <input type="submit" value="Submit" />
+            <p>Je bent over de helft! Nog maar drie!!</p>
+          </div>
         </fieldset>
         <div>
           <a href="#bt-form">Volgende</a>
@@ -418,7 +445,10 @@
             />
           </label>
           <br />
-          <input type="submit" value="Submit" />
+          <div class="submit-wrapper">
+            <input type="submit" value="Submit" />
+            <p>Bijna klaar!! Nog maar twee!</p>
+          </div>
         </fieldset>
         <div>
           <a href="#rtw-form">Volgende</a>
@@ -493,7 +523,10 @@
             />
           </label>
           <br />
-          <input type="submit" value="Submit" />
+          <div class="submit-wrapper">
+            <input type="submit" value="Submit" />
+            <p>Nog eentje! Goed bezig!!!</p>
+          </div>
         </fieldset>
         <div>
           <a href="#hcd-form">Volgende</a>
@@ -568,7 +601,10 @@
             />
           </label>
           <br />
-          <input type="submit" value="Submit" />
+          <div class="submit-wrapper">
+            <input type="submit" value="Submit" />
+            <p>Klaaaaar!!!! Geweldig gedaan!! Goude ster voor jou!</p>
+          </div>
         </fieldset>
         <div>
           <a href="#submit-form">Volgende</a>

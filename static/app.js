@@ -101,11 +101,33 @@ function changeTextInputsToRangeInputs() {
 changeTextInputsToRangeInputs();
 
 
+document.querySelector('nav > a[href="#personal-info-form"]').classList.add('invisible')
+
+// ACTUAL SECOND
+// Implement next buttons for form 
+
+document.querySelector('#personal-info-next').addEventListener('click', (event) => {
+	// document.querySelector('.progress-circle[href="#personal-info-form"]').classList.add('completed');
+	const personalInfoForm = document.querySelector('#personal-info-form');
+
+	if (! personalInfoForm.classList.contains('invisible')) {
+		personalInfoForm.classList.add('invisible');
+	}
+})
+
+document.querySelector('#wafs-form-previous').addEventListener('click', (event) => {
+	const personalInfoForm = document.querySelector('#personal-info-form');
+
+	if (personalInfoForm.classList.contains('invisible')) {
+		personalInfoForm.classList.remove('invisible');
+	}
+})
+
 // SECOND
 // Handle local storage!!
 if (window.localStorage) {
 
-	computeProgress();
+	// computeProgress();
 
 	// This is only all of the input submits in the individual forms, because the final one is a button
 	const allSubmitInputs = document.querySelectorAll('input[type="submit"]');
@@ -201,7 +223,7 @@ if (window.localStorage) {
 			putFormDataInLocalStorage(formID, formJSON);
 
 			// Also, this is a convenient place to update the progress bar
-			computeProgress();
+			// computeProgress();
 		})
 	})
 
