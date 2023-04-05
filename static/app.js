@@ -226,6 +226,10 @@ finalSubmitForm.addEventListener('submit', event => {
 		})
 	}
 
+	if (window.localStorage) {
+		window.localStorage.clear();
+	}
+
 	submitAll().then(() => {
 		// finalSubmitForm.submit();
 	}) 
